@@ -5,6 +5,7 @@ import java.util.*;
 /**
  * Created by je565 on 1/16/18.
  */
+
 public class TowersofHanoi {
 
     public static String askUser;
@@ -26,8 +27,8 @@ public class TowersofHanoi {
 
         for(int j = 0; j < numDisks; j++)
         {
-            System.out.println((j + 1) + ": ");
-            
+            System.out.print((j + 1) + " - ");
         }
     }
+
 }

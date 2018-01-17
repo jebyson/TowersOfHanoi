@@ -9,6 +9,7 @@ import java.util.*;
 public class TowersofHanoi {
 
     public int numDisks = 1;
+    public int minMoves = 1;
 
     public  void startGame()
     {
@@ -16,6 +17,8 @@ public class TowersofHanoi {
 
         Scanner input = new Scanner(System.in);
         numDisks = input.nextInt();
+
+        minMoves = (int)(Math.pow(2, numDisks)) - 1;
     }
 
     public void solve(int numOfDisks, String rod1, String rod2, String rod3)

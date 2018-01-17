@@ -8,27 +8,27 @@ import java.util.*;
 
 public class TowersofHanoi {
 
-    public static String askUser;
-    public static int numDisks;
+    public int numDisks = 1;
 
-    public static void startGame()
+    public  void startGame()
     {
         System.out.println("Welcome to the Towers of Hanoi. Please input the number of disks you would like to solve for.");
 
         Scanner input = new Scanner(System.in);
-        askUser = input.next();
-        askUser.trim();
-        numDisks = Integer.parseInt(askUser);
+        numDisks = input.nextInt();
     }
 
-    public static void solve()
+    public void solve(int numOfDisks, String rod1, String rod2, String rod3)
     {
-        System.out.println("Instructions: ");
-
-        for(int j = 0; j < numDisks; j++)
+        if (numOfDisks == 1)
         {
-            System.out.print((j + 1) + " - ");
+            System.out.println("Move disk from the " + rod1 + " to the " + rod3 + ".");
+        }
+        else
+        {
+            solve(numOfDisks - 1, rod1, rod3, rod2);
+            System.out.println("Move disk from the " + rod1 + " to the " + rod3 + ".");
+            solve(numOfDisks - 1, rod2, rod1, rod3);
         }
     }
-
 }

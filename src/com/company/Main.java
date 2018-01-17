@@ -13,8 +13,10 @@ public class Main {
         }
         else
         {
-            System.out.println("Instructions: ");
+            System.out.println("\nInstructions:");
             newGame.solve(newGame.numDisks, "1st rod", "2nd rod", "3rd rod");
         }
+
+        System.out.println("\nMinimum number of moves: " + newGame.minMoves);
     }
 }

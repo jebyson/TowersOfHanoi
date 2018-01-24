@@ -2,14 +2,11 @@ package com.company;
 
 import java.util.*;
 
-/**
- * Created by je565 on 1/16/18.
- */
-
 public class TowersofHanoi {
 
     public int numDisks = 1;
     public int minMoves = 1;
+    public int numOfMove = 1;
 
     public  void startGame()
     {
@@ -25,12 +22,14 @@ public class TowersofHanoi {
     {
         if (numOfDisks == 1)
         {
-            System.out.println("Move disk from the " + rod1 + " to the " + rod3 + ".");
+            System.out.println(numOfMove + " - Move disk from the " + rod1 + " to the " + rod3 + ".");
+            numOfMove++;
         }
         else
         {
             solve(numOfDisks - 1, rod1, rod3, rod2);
-            System.out.println("Move disk from the " + rod1 + " to the " + rod3 + ".");
+            System.out.println(numOfMove + " - Move disk from the " + rod1 + " to the " + rod3 + ".");
+            numOfMove++;
             solve(numOfDisks - 1, rod2, rod1, rod3);
         }
     }
